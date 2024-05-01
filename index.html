@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+
+        margin: 0;
+        padding: 0;
+        background-color: #808080;
+
+    }
+
+    .header {
+        height: 460px;
+        width: 400px;
+        border: 2px solid black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        margin-left: 380px;
+        margin-top: 100px;
+        background-color: #ffff;
+    }
+
+    h2 {
+          position: relative;
+          bottom: 30px;
+          font-size: 25px;
+        background-color: white;
+    }
+
+    input {
+       position: relative;
+       bottom: 20px;
+       left: 5px;
+        height: 35px;
+        width: 250px;
+        font-size: 18px;
+        color: black;
+        background-color: white;
+    }
+
+    button {
+        position: relative;
+        top:30px;
+        margin-bottom: 30px;
+        height: 35px;
+        width: 250px;
+        font-size: 18px;
+        background-color: blue;
+        color: white;
+        border: none;
+    }
+   
+
+</style>
+
+<body>
+    <div class="header">
+        <h2>Enter the text or URL</h2>
+        <input type="text" placeholder="Enter Your text or URL" id="qrtext">
+        <div class="image">
+            <img src="" alt="" id="img">
+        </div>
+        <button onclick="qrcode()">Generate QR Code</button>
+    </div>
+    <script>
+        let qrtext=document.getElementById('qrtext')
+        let image=document.getElementsByClassName("image")
+        let img=document.getElementById("img")
+        function qrcode(){
+            img.src='https://api.qrserver.com/v1/create-qr-code/?size=150x150&data='+qrtext.value;
+        }
+    </script>
+
+</body>
+
+</html>
